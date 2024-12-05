@@ -1,4 +1,4 @@
-package com.gest.gesthm.repository;
+package com.gest.gesthm.repositorios;
 
 import com.gest.gesthm.entity.Cita;
 import org.springframework.data.jpa.repository.JpaRepository;

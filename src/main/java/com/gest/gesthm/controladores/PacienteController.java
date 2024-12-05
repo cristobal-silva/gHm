@@ -1,7 +1,7 @@
-package com.gest.gesthm.controller;
+package com.gest.gesthm.controladores;
 
 import com.gest.gesthm.entity.Paciente;
-import com.gest.gesthm.service.PacienteService;
+import com.gest.gesthm.servicios.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

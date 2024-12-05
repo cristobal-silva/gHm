@@ -1,4 +1,4 @@
-package com.gest.gesthm.repository;
+package com.gest.gesthm.repositorios;
 
 import com.gest.gesthm.entity.Paciente;
 import org.springframework.data.jpa.repository.JpaRepository;

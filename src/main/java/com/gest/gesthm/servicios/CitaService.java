@@ -1,7 +1,7 @@
-package com.gest.gesthm.service;
+package com.gest.gesthm.servicios;
 
 import com.gest.gesthm.entity.Cita;
-import com.gest.gesthm.repository.CitaRepository;
+import com.gest.gesthm.repositorios.CitaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

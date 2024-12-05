@@ -1,7 +1,7 @@
-package com.gest.gesthm.controller;
+package com.gest.gesthm.controladores;
 
 import com.gest.gesthm.entity.Usuario;
-import com.gest.gesthm.service.UsuarioService;
+import com.gest.gesthm.servicios.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -51,4 +51,5 @@ public class UsuarioController {
                     return ResponseEntity.ok().<Void>build();
                 }).orElseGet(() -> ResponseEntity.notFound().build());
     }
+    
 }

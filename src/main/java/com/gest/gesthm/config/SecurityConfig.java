@@ -1,5 +1,6 @@
 package com.gest.gesthm.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,23 +16,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-            .csrf().disable()  // Desactivado para APIs, activar si se usa en formularios
+            .cors() // Habilitar CORS definido en CorsConfiguration
+                .and()
+            .csrf().disable() // Desactivar CSRF para APIs
             .authorizeRequests()
-                .antMatchers("/api/public/**").permitAll()  // Permite acceso a rutas públicas
-                .anyRequest().authenticated()  // Requiere autenticación para cualquier otra ruta
-            .and()
-            .httpBasic();  // Utiliza autenticación básica
+                .antMatchers("/api/public/**").permitAll() // Rutas públicas
+                .anyRequest().authenticated() // Rutas protegidas
+                .and()
+            .httpBasic(); // Autenticación básica
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
             .inMemoryAuthentication()
-                .passwordEncoder(passwordEncoder())
-                .withUser("user").password(passwordEncoder().encode("password")).roles("USER");
+            .withUser("user") // Usuario
+            .password(passwordEncoder().encode("password")) // Contraseña
+            .roles("USER"); // Rol
     }
 
+    @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();  // Codificador de contraseñas usando BCrypt
+        return new BCryptPasswordEncoder();
     }
 }

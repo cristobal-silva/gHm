@@ -1,7 +1,7 @@
-package com.gest.gesthm.service;
+package com.gest.gesthm.servicios;
 
 import com.gest.gesthm.entity.Usuario;
-import com.gest.gesthm.repository.UsuarioRepository;
+import com.gest.gesthm.repositorios.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +13,10 @@ public class UsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    public Usuario findByNombreUsuario(String nombreUsuario) {
+        return usuarioRepository.findByNombreUsuario(nombreUsuario);
+    }
 
     public List<Usuario> findAll() {
         return usuarioRepository.findAll();
@@ -29,4 +33,6 @@ public class UsuarioService {
     public void delete(Long id) {
         usuarioRepository.deleteById(id);
     }
+
+    
 }

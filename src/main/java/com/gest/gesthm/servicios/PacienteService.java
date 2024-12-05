@@ -1,7 +1,7 @@
-package com.gest.gesthm.service;
+package com.gest.gesthm.servicios;
 
 import com.gest.gesthm.entity.Paciente;
-import com.gest.gesthm.repository.PacienteRepository;
+import com.gest.gesthm.repositorios.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
